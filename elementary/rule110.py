@@ -25,14 +25,8 @@ def main():
     # Generate the initial generation
     world = numpy.zeros((width,height,1), dtype=int)
     render = numpy.zeros((width,height,3), dtype=int)
-    for index in range(0,width-1):
-        life = random.randint(0,1)
-        if life == 1:
-            render[index,tick] = (0,0,0)
-            world[index,tick] = 1
-        else:
-            render[index,tick] = (255,255,255)
-            world[index,tick] = 0
+    render[width-1,tick] = (0,0,0)
+    world[width-1,tick] = 1
 
     # Generate the initial world
 
@@ -74,7 +68,8 @@ def main():
         
         # Render
         surfarray.blit_array(screen,render)
-        pygame.display.update()
+        updateRect = pygame.Rect((0,tick-1),(width-1,tick))
+        pygame.display.update(updateRect)
         tick += 1
         if life == 0:
             sys.exit()
