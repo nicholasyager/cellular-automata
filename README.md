@@ -14,10 +14,15 @@ Elementary.py
 A general simulator that will simulate a elementary cellular automata using any
 of the 256 rule sets available to elementary automata.
 
-Usage:
+
     elementary.py <rule>
 
-Options:
-    rule: An interger rule that is the decimal representation of the 16 bit 
-          binary rule set. The default is Rule 110.
+    Usage:
+
+        elementary.py 110
+        elementary.oy 126
+
+    Options:
+        rule: An interger rule that is the decimal representation of the 16 bit 
+              binary rule set. The default is Rule 110.
 
