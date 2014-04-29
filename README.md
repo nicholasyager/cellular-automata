@@ -15,12 +15,12 @@ A general simulator that will simulate a elementary cellular automata using any
 of the 256 rule sets available to elementary automata.
 
 
-    elementary.py <rule>
+    elementary.py [--width=<width> --height=<height>] <rule>
 
     Usage:
 
         elementary.py 110
-        elementary.py 126
+        elementary.py --width=800 --height=600 126
 
     Options:
         rule: An interger rule that is the decimal representation of the 16 bit 
