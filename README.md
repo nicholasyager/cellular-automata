@@ -5,9 +5,14 @@ A series of python scripts that run various type of cellular automata.
 
 Requirements:
 -----
+
+elementary.py:
  - Python2
  - Pygame
  - Numpy
+
+life-like.py:
+ - python3
 
 Elementary.py
 -----
@@ -26,3 +31,12 @@ of the 256 rule sets available to elementary automata.
         rule: An interger rule that is the decimal representation of the 16 bit 
               binary rule set. The default is Rule 110.
 
+Life-like.py
+----
+life-like.py                                                                    
+                                                                                
+A script that simulates a life-like cellular automaton using the rules of       
+Conway's Game of Life.                                                          
+                                                                                
+    Usage:                                                                          
+        life-like.py 
