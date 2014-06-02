@@ -40,17 +40,19 @@ class World():
             for col in range(self.width):
                 # If the odds are in the position's favor
                 if random.uniform(0,1) <= p:
-                    self.matrix[row][col] = "1"
+                    # The cell is alive.
+                    self.matrix[row][col] = "█"
                 else:
-                    self.matrix[row][col] = "0"
+                    # The cell is dead.
+                    self.matrix[row][col] = " "
 
-    def _print(self):
+    def show(self):
         """
         Print the current world to the console.
         """
         #os.system('cls' if os.name=='nt' else 'clear')
         for row in range(self.height):
-            print("".join(self.matrix[row]).replace("1","█").replace("0"," "))
+            print("".join(self.matrix[row]))
 
                 
     def simulate(self):
@@ -94,16 +96,16 @@ class World():
                     elif n_col == self.width:
                         n_col = 0
 
-                    if self.matrix[n_row][n_col] == "1":
+                    if self.matrix[n_row][n_col] == "█":
                         n_neighbors += 1
 
                 # Determine if there will be life in that cell on the next tick
                 if n_neighbors == 3:
-                    self.NGM[row][col] = "1"
-                elif n_neighbors == 2 and self.matrix[row][col] == "1":
-                    self.NGM[row][col] = "1"
+                    self.NGM[row][col] = "█"
+                elif n_neighbors == 2 and self.matrix[row][col] == "█":
+                    self.NGM[row][col] = "█"
                 else:
-                    self.NGM[row][col] = "0"
+                    self.NGM[row][col] = " "
        
         self.matrix = self.NGM 
     
@@ -121,9 +123,9 @@ def main():
     # Simulate the world
     while True:
 
-        world._print()      # Write the current tick
-        #time.sleep(0.05)
+        world.show()      # Write the current tick
         world.simulate()    # Simulate the next tick
+
 
 def get_terminal_size(fd=1):
     """
@@ -131,7 +133,13 @@ def get_terminal_size(fd=1):
     size via termios.TIOCGWINSZ, then from environment. Defaults to 25
     lines x 80 columns if both methods fail.
 
-    :param fd: file descriptor (default: 1=stdout)
+    Arguments:
+
+        fd: File descriptor (default: 1=stdout)
+
+    Returns:
+        (width, height):    A tuple containing the width and height of the 
+                            terminal window.
     """
     try:
         import fcntl, termios, struct

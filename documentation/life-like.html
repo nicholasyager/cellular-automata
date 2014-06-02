@@ -25,9 +25,8 @@ Usage:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
 </td><td width="25%" valign=top><a href="random.html">random</a><br>
-</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
 </td><td width="25%" valign=top><a href="time.html">time</a><br>
-</td></tr></table></td></tr></table><p>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -55,6 +54,8 @@ populate&nbsp;it&nbsp;accordingy.</tt></dd></dl>
 
 <dl><dt><a name="World-populate"><strong>populate</strong></a>(self, p=0.5)</dt><dd><tt>Iterate&nbsp;through&nbsp;the&nbsp;world&nbsp;randomly&nbsp;placing&nbsp;life&nbsp;in&nbsp;positions&nbsp;based&nbsp;on<br>
 a&nbsp;probability&nbsp;p.</tt></dd></dl>
+
+<dl><dt><a name="World-show"><strong>show</strong></a>(self)</dt><dd><tt>Print&nbsp;the&nbsp;current&nbsp;world&nbsp;to&nbsp;the&nbsp;console.</tt></dd></dl>
 
 <dl><dt><a name="World-simulate"><strong>simulate</strong></a>(self)</dt><dd><tt>Examine&nbsp;the&nbsp;number&nbsp;of&nbsp;neighbors&nbsp;for&nbsp;each&nbsp;cell&nbsp;and&nbsp;determine&nbsp;if&nbsp;a&nbsp;future<br>
 lifeform&nbsp;will&nbsp;occupy&nbsp;the&nbsp;same&nbsp;space.<br>
@@ -93,7 +94,13 @@ Data and other attributes defined here:<br>
 size&nbsp;via&nbsp;termios.TIOCGWINSZ,&nbsp;then&nbsp;from&nbsp;environment.&nbsp;Defaults&nbsp;to&nbsp;25<br>
 lines&nbsp;x&nbsp;80&nbsp;columns&nbsp;if&nbsp;both&nbsp;methods&nbsp;fail.<br>
 &nbsp;<br>
-:param&nbsp;fd:&nbsp;file&nbsp;descriptor&nbsp;(default:&nbsp;1=stdout)</tt></dd></dl>
+Arguments:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fd:&nbsp;File&nbsp;descriptor&nbsp;(default:&nbsp;1=stdout)<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(width,&nbsp;height):&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;width&nbsp;and&nbsp;height&nbsp;of&nbsp;the&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;terminal&nbsp;window.</tt></dd></dl>
  <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
 </td></tr></table>
 </body></html>
